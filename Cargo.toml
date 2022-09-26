@@ -1,7 +1,20 @@
+[workspace]
+members = [
+    "node",
+    "pallets/template",
+    "pallets/members",
+    "runtime",
+]
+[profile.release]
+panic = "unwind"
+
+
+
 [package]
 name = "ss-final-project"
 version = "0.1.0"
 edition = "2021"
+path = "runtime/src/lib.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
