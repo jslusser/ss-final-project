@@ -1,3 +1,9 @@
+[package]
+name = "ss-final-project"
+version = "0.1.0"
+edition = "2021"
+path = "src/main.rs"
+
 [workspace]
 members = [
     "node",
@@ -8,14 +14,22 @@ members = [
 [profile.release]
 panic = "unwind"
 
-
-
-[package]
-name = "ss-final-project"
-version = "0.1.0"
-edition = "2021"
-path = "runtime/src/lib.rs"
+[[bin]]
+name = 'ss-final-project'
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+
+codec = { package = "parity-scale-codec", version = "3.0.0", default-features = false, features = [
+	"derive",
+] }
+scale-info = { version = "2.1.1", default-features = false, features = ["derive"] }
+frame-support = { default-features = false, version = "4.0.0-dev", git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v0.9.26"}
+frame-system = { default-features = false, version = "4.0.0-dev", git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v0.9.26" }
+frame-benchmarking = { default-features = false, version = "4.0.0-dev", git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v0.9.26", optional = true }
+
+[dev-dependencies]
+sp-core = { default-features = false, version = "6.0.0", git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v0.9.26" }
+sp-io = { default-features = false, version = "6.0.0", git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v0.9.26" }
+sp-runtime = { default-features = false, version = "6.0.0", git = "https://github.com/paritytech/substrate.git", branch = "polkadot-v0.9.26" }

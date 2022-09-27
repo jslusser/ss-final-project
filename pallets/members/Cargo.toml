@@ -10,7 +10,7 @@ publish = false
 repository = "https://github.com/s"
 
 [package.metadata.docs.rs]
-targets = ["x86_64-unknown-linux-gnu"]
+targets = ["x86_64-apple-darwin"]
 
 [dependencies]
 codec = { package = "parity-scale-codec", version = "3.0.0", default-features = false, features = [
